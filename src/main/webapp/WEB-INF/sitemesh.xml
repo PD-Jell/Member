@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sitemesh>
+	<!-- match되지 않는 모든 path에 적용. -->
+<!-- 	<mapping decorator="/default-decorator.jsp" /> -->
+
+	<!-- 주소매핑 -->
+
+	<!-- <mapping path="/admin/*" decorator="/another-decorator.html" /> -->
+	<!-- <mapping path="/*.special.jsp" decorator="/special-decorator.html" 
+		/> -->
+
+	<!-- Alternative convention. This is more verbose but allows multiple decorators 
+		to be applied to a single path. -->
+	<mapping>
+		<path>/member/*</path>
+		<path>/login</path>
+		<path>/index.jsp</path>
+		<decorator>/WEB-INF/views/decorators/main-decorator.jsp</decorator>
+		<decorator>/WEB-INF/views/decorators/logo-decorator.jsp</decorator>
+		<!-- <decorator>/decorators/common.html</decorator> -->
+	</mapping>
+
+	<!-- Exclude path from decoration. -->
+	<mapping path="/study/*" exclude="true" />
+
+</sitemesh>
